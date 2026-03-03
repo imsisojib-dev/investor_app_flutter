@@ -25,3 +25,34 @@ class AppColors {
   static const Color warning = Color(0xFFFFA726);
   static const Color info = Color(0xFF29B6F6);
 }
+
+// Extend ColorScheme with custom colors
+extension AppColorScheme on ColorScheme {
+  Color get textSecondary => brightness == Brightness.light
+      ? const Color(0xFF666666)
+      : const Color(0xFFB0B0B0);
+
+  Color get textTertiary => brightness == Brightness.light
+      ? const Color(0xFF999999)
+      : const Color(0xFF808080);
+
+  Color get cardColor => brightness == Brightness.light
+      ? const Color(0xFFFFFBF5)
+      : const Color(0xFF1E1E1E);
+
+  Color get dividerColor => brightness == Brightness.light
+      ? const Color(0xFFE0E0E0)
+      : const Color(0xFF2C2C2C);
+
+  Color get hintColor => brightness == Brightness.light
+      ? const Color(0xFF999999)
+      : const Color(0xFF666666);
+
+  Color get iconSecondary => brightness == Brightness.light
+      ? const Color(0xFF666666)
+      : const Color(0xFFB0B0B0);
+
+  Color get success => const Color(0xFF4CAF50);
+  Color get warning => const Color(0xFFFFA726);
+  Color get info => const Color(0xFF29B6F6);
+}
