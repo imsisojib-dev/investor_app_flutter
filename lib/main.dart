@@ -27,7 +27,7 @@ Future<void> initApp()async {
           create: (BuildContext context) => BlocAppTheme(),
         ),
       ],
-      child: const MyApp(),
+      child: const InvestorApp(),
     ),
   );
 }
