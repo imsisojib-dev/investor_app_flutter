@@ -1,12 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:investor_app_flutter/src/config/routes/navigation_observer.dart';
+import 'package:investor_app_flutter/src/config/routes/router_helper.dart';
+import 'package:investor_app_flutter/src/config/routes/routes.dart';
+import 'package:investor_app_flutter/src/core/theme/bloc/bloc_app_theme.dart';
+import 'package:investor_app_flutter/src/core/theme/app_theme.dart';
 
-import 'core/presentation/blocs/app_theme/bloc_app_theme.dart';
-import 'core/theme/app_theme.dart';
+class InvestorApp extends StatefulWidget {
+  const InvestorApp({super.key});
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  @override
+  State<InvestorApp> createState() => _InvestorAppState();
+}
+
+class _InvestorAppState extends State<InvestorApp> {
+
+  @override
+  void initState() {
+    super.initState();
+    RouterHelper().setupRouter();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +43,9 @@ class MyApp extends StatelessWidget {
               theme: AppTheme.light,
               darkTheme: AppTheme.dark,
               themeMode: themeState.themeMode,
-              home: MyHomePage(title: "Investor App",),
+              initialRoute: Routes.homeScreen,
+              onGenerateRoute: RouterHelper.router.generator,
+              navigatorObservers: [AppNavObserver()],
             );
           },
         );

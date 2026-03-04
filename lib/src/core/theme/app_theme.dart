@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
+import 'app_theme_extension.dart';
 import 'app_typography.dart';
 
 class AppTheme {
@@ -9,6 +10,11 @@ class AppTheme {
       useMaterial3: true,
       brightness: Brightness.light,
       fontFamily: 'Outfit',
+
+      // Add custom theme extension
+      extensions: const <ThemeExtension<dynamic>>[
+        AppThemeExtension.light,
+      ],
 
       colorScheme: ColorScheme.light(
         primary: AppColors.primary,
@@ -101,6 +107,11 @@ class AppTheme {
       useMaterial3: true,
       brightness: Brightness.dark,
       fontFamily: 'Outfit',
+
+      // Add custom theme extension
+      extensions: const <ThemeExtension<dynamic>>[
+        AppThemeExtension.dark,
+      ],
 
       colorScheme: ColorScheme.dark(
         primary: AppColors.primary,
