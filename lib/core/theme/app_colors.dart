@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   // Brand colors
-  static const Color primary = Color(0xFFB8935F);
-  static const Color secondary = Color(0xFF8B7355);
+  static const Color primary = Color(0xFF008647);
+  static const Color secondary = Color(0xFFFFFF3F);
 
   // Light theme colors
   static const Color lightBackground = Color(0xFFFFFFFF);
   static const Color lightSurface = Color(0xFFFFFBF5);
-  static const Color lightTextPrimary = Color(0xFF2C2C2C);
-  static const Color lightTextSecondary = Color(0xFF666666);
-  static const Color lightDivider = Color(0xFFE0E0E0);
+  static const Color lightTextPrimary = Color(0xFF3D3D3D);
+  static const Color lightTextSecondary = Color(0xFF67748D);
+  static const Color lightDivider = Color(0xFFCFD6E2);
 
   // Dark theme colors
   static const Color darkBackground = Color(0xFF121212);
@@ -24,6 +24,9 @@ class AppColors {
   static const Color error = Color(0xFFE53935);
   static const Color warning = Color(0xFFFFA726);
   static const Color info = Color(0xFF29B6F6);
+
+  // Basic colors
+  static const Color white = Color(0xFFFFFFFF);
 }
 
 // Extend ColorScheme with custom colors

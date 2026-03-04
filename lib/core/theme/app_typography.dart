@@ -106,7 +106,7 @@ class AppTypography {
     fontFamily: _fontFamily,
     fontSize: 12,
     fontWeight: FontWeight.w500,
-    letterSpacing: 0.5,
+    letterSpacing: -0.4,
     height: 1.33,
   );
 
