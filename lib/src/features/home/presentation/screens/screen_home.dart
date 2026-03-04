@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:investor_app_flutter/core/data/enums/e_bottomnavigation.dart';
-import 'package:investor_app_flutter/core/presentation/widgets/app_bottomnavigationbar.dart';
+import 'package:investor_app_flutter/src/core/enums/e_bottomnavigation.dart';
+import 'package:investor_app_flutter/src/shared/widgets/app_bottomnavigationbar.dart';
 
 class ScreenHome extends StatelessWidget{
   const ScreenHome({super.key});

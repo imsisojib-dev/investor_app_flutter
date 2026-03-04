@@ -2,8 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:investor_app_flutter/src/core/theme/bloc/bloc_app_theme.dart';
 
-import 'core/presentation/blocs/app_theme/bloc_app_theme.dart';
 import 'investor_app.dart';
 
 void main() async{

@@ -1,10 +1,10 @@
 import 'package:fluro/fluro.dart';
-import 'package:investor_app_flutter/config/routes/routes.dart';
-import 'package:investor_app_flutter/core/presentation/screens/screen_error.dart';
-import 'package:investor_app_flutter/features/account/presentation/screens/screen_account.dart';
-import 'package:investor_app_flutter/features/discover/presentation/screens/screen_discover.dart';
-import 'package:investor_app_flutter/features/home/presentation/screens/screen_home.dart';
-import 'package:investor_app_flutter/features/portfolio/presentation/screens/screen_portfolio.dart';
+import 'package:investor_app_flutter/src/config/routes/routes.dart';
+import 'package:investor_app_flutter/src/features/account/presentation/screens/screen_account.dart';
+import 'package:investor_app_flutter/src/features/discover/presentation/screens/screen_discover.dart';
+import 'package:investor_app_flutter/src/features/home/presentation/screens/screen_home.dart';
+import 'package:investor_app_flutter/src/features/portfolio/presentation/screens/screen_portfolio.dart';
+import 'package:investor_app_flutter/src/shared/screens/screen_error.dart';
 
 
 class RouterHelper {

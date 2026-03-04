@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:investor_app_flutter/config/assets/asset_svgs.dart';
-import 'package:investor_app_flutter/config/routes/routes.dart';
-import 'package:investor_app_flutter/core/data/enums/e_bottomnavigation.dart';
-import 'package:investor_app_flutter/core/theme/app_colors.dart';
+import 'package:investor_app_flutter/src/config/assets/asset_svgs.dart';
+import 'package:investor_app_flutter/src/config/routes/routes.dart';
+import 'package:investor_app_flutter/src/core/enums/e_bottomnavigation.dart';
+import 'package:investor_app_flutter/src/core/theme/app_colors.dart';
 
 class AppBottomNavigationBar extends StatefulWidget {
   final EBottomNavigationBar? state;
