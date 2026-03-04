@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:investor_app_flutter/src/config/extensions/widget_extensions.dart';
 import 'package:investor_app_flutter/src/core/theme/app_theme_extension.dart';
 import 'package:investor_app_flutter/src/features/home/presentation/widgets/campaign_card.dart';
+import 'package:investor_app_flutter/src/features/home/presentation/widgets/video_card_advanced.dart';
 
 class HomeContentSection extends StatelessWidget {
   const HomeContentSection({super.key});
@@ -51,11 +52,24 @@ class HomeContentSection extends StatelessWidget {
                 CarouselSlider.builder(
                   itemCount: 5,
                   itemBuilder: (_, index, pageIndex) {
-                    return CampaignCard();
+                    return VideoCardAdvanced(
+                      videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+                      thumbnailUrl: 'https://picsum.photos/400/225?random=1',
+                      title: 'Know about the Risk Grade',
+                      onTap: () {
+
+                      },
+                    );
                   },
-                  options: CarouselOptions(enlargeCenterPage: false, autoPlay: false, height: 185.h),
+                  options: CarouselOptions(
+                    enlargeCenterPage: false,
+                    autoPlay: false,
+                    height: 130.h,
+                    viewportFraction: 0.6,
+                    enableInfiniteScroll: true,
+                  ),
                 ),
-                const SizedBox(height: 24,),
+                const SizedBox(height: 16,),
               ],
             ),
           ),
