@@ -49,7 +49,7 @@ class AppTypography {
 
   static const TextStyle titleLarge = TextStyle(
     fontFamily: _fontFamily,
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: FontWeight.w500,
     height: 1.27,
   );
@@ -112,9 +112,9 @@ class AppTypography {
 
   static const TextStyle labelSmall = TextStyle(
     fontFamily: _fontFamily,
-    fontSize: 11,
-    fontWeight: FontWeight.w500,
-    letterSpacing: 0.5,
+    fontSize: 10,
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0,
     height: 1.45,
   );
 

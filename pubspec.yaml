@@ -37,11 +37,12 @@ dependencies:
   equatable: ^2.0.8
   injectable: ^2.7.1+4
   get_it: ^9.1.1  #dependency-injection
+  fluro: ^2.0.3 #for routing
 
   flutter_screenutil: ^5.9.3  #for adaptive_ui
   flutter_svg: ^2.0.10+1
+  carousel_slider: ^5.1.2
 
-  fluro: ^2.0.3 #for routing
   flutter_dotenv: ^6.0.0
 
 dev_dependencies:
@@ -70,6 +71,7 @@ flutter:
   assets:
     - assets/fonts/outfit/
     - assets/svgs/bottomnav/
+    - assets/pngs/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

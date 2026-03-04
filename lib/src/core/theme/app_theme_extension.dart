@@ -13,6 +13,7 @@ import 'package:flutter/material.dart';
 @immutable
 class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
   final Color textSecondary;
+  final Color textYellow;
   final Color textTertiary;
   final Color cardColor;
   final Color dividerColor;
@@ -21,6 +22,8 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
   final Color success;
   final Color warning;
   final Color info;
+  final Color white;
+  final Color shadowColor;
 
   const AppThemeExtension({
     required this.textSecondary,
@@ -32,6 +35,9 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
     required this.success,
     required this.warning,
     required this.info,
+    required this.white,
+    required this.textYellow,
+    required this.shadowColor,
   });
 
   // Light theme colors
@@ -45,6 +51,9 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
     success: Color(0xFF4CAF50),
     warning: Color(0xFFFFA726),
     info: Color(0xFF29B6F6),
+    white: Colors.white,
+    textYellow: Color(0xffFFFF3F),
+    shadowColor: Color(0xffE9E9E9),
   );
 
   // Dark theme colors
@@ -58,6 +67,9 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
     success: Color(0xFF4CAF50),
     warning: Color(0xFFFFA726),
     info: Color(0xFF29B6F6),
+    white: Colors.white,
+    textYellow: Color(0xffFFFF3F),
+    shadowColor: Color(0xffE9E9E9),
   );
 
   @override
@@ -71,6 +83,7 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
     Color? success,
     Color? warning,
     Color? info,
+    Color? shadowColor,
   }) {
     return AppThemeExtension(
       textSecondary: textSecondary ?? this.textSecondary,
@@ -82,6 +95,9 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
       success: success ?? this.success,
       warning: warning ?? this.warning,
       info: info ?? this.info,
+      white: white,
+      textYellow: Color(0xffFFFF3F),
+      shadowColor: shadowColor ?? Color(0xffE9E9E9),
     );
   }
 
@@ -102,6 +118,9 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
       success: Color.lerp(success, other.success, t)!,
       warning: Color.lerp(warning, other.warning, t)!,
       info: Color.lerp(info, other.info, t)!,
+      white: Colors.white,
+      textYellow: Color(0xffFFFF3F),
+      shadowColor: Color(0xffE9E9E9),
     );
   }
 }
