@@ -8,22 +8,16 @@ import 'package:investor_app_flutter/src/core/theme/app_colors.dart';
 class AppBottomNavigationBar extends StatefulWidget {
   final EBottomNavigationBar? state;
 
-  const AppBottomNavigationBar({
-    super.key,
-    this.state,
-  });
+  const AppBottomNavigationBar({super.key, this.state});
 
   @override
   State<AppBottomNavigationBar> createState() => _AppBottomNavigationBarState();
 }
 
 class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
-  Widget _buildNavigationItem({
-    required String title,
-    required svgAsset,
-    bool active = false,
-    Function? onPressed,
-  }) {
+  Widget _buildNavigationItem({required String title, required svgAsset, bool active = false, Function? onPressed}) {
+    final theme = Theme.of(context);
+
     return IconButton(
       onPressed: () {
         onPressed?.call();
@@ -34,17 +28,12 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
         children: [
           SvgPicture.asset(
             svgAsset,
-            height: 18,
-            colorFilter: ColorFilter.mode(
-              active ? AppColors.primary : AppColors.lightTextSecondary,
-              BlendMode.srcIn,
-            ),
+            height: 24,
+            colorFilter: ColorFilter.mode(active ? AppColors.primary : AppColors.lightTextSecondary, BlendMode.srcIn),
           ),
           Text(
             title,
-            style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                  color: active ? AppColors.primary : AppColors.lightTextSecondary,
-                ),
+            style: theme.textTheme.labelMedium?.copyWith(color: active ? AppColors.primary : AppColors.lightTextSecondary),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
@@ -56,47 +45,35 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: kToolbarHeight + MediaQuery.of(context).padding.bottom + 5,
+      height: kToolbarHeight + MediaQuery.of(context).padding.bottom + 10,
       width: MediaQuery.of(context).size.width,
       padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom, top: 6),
       decoration: BoxDecoration(
         color: AppColors.white,
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0xff000000).withOpacity(.05),
-            spreadRadius: 5,
-            blurRadius: 5,
-            offset: const Offset(0, -1),
-          ),
-        ],
+        borderRadius: const BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+        boxShadow: [BoxShadow(color: const Color(0xff000000).withOpacity(.05), spreadRadius: 5, blurRadius: 5, offset: const Offset(0, -1))],
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           _buildNavigationItem(
-              title: "Home",
-              svgAsset: AssetSvgs.home,
-              active: widget.state == EBottomNavigationBar.home,
-              onPressed: () {
-                if (widget.state == EBottomNavigationBar.home) return;
+            title: "Home",
+            svgAsset: AssetSvgs.home,
+            active: widget.state == EBottomNavigationBar.home,
+            onPressed: () {
+              if (widget.state == EBottomNavigationBar.home) return;
 
-                Navigator.pushNamedAndRemoveUntil(context, Routes.homeScreen, (route) => false);
-              }),
+              Navigator.pushNamedAndRemoveUntil(context, Routes.homeScreen, (route) => false);
+            },
+          ),
           _buildNavigationItem(
             title: "Discover",
             svgAsset: AssetSvgs.discover,
             active: widget.state == EBottomNavigationBar.discover,
             onPressed: () {
               if (widget.state == EBottomNavigationBar.discover) return;
-              Navigator.pushNamed(
-                context,
-                Routes.discoverScreen,
-              );
+              Navigator.pushNamed(context, Routes.discoverScreen);
             },
           ),
           _buildNavigationItem(
@@ -105,10 +82,7 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
             active: widget.state == EBottomNavigationBar.portfolio,
             onPressed: () {
               if (widget.state == EBottomNavigationBar.portfolio) return;
-              Navigator.pushNamed(
-                context,
-                Routes.portfolioScreen,
-              );
+              Navigator.pushNamed(context, Routes.portfolioScreen);
             },
           ),
           _buildNavigationItem(

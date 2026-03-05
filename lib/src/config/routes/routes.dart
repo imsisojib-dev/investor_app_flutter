@@ -10,5 +10,8 @@ class Routes {
   ///ACCOUNT
   static const String accountScreen = "/account";
 
+  ///CAMPAIGN
+  static const String campaignDetailsScreen = '/campaign';
+
 
 }
