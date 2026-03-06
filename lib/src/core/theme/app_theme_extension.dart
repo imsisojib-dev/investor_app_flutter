@@ -26,6 +26,7 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
   final Color secondaryWithOpacity;
   final Color borderColor;
   final Color textYellow;
+  final Color scaffoldSecondaryBg;
 
   const AppThemeExtension({
     required this.textSecondary,
@@ -42,6 +43,7 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
     required this.shadowColor,
     required this.secondaryWithOpacity,
     required this.borderColor,
+    required this.scaffoldSecondaryBg,
   });
 
   // Light theme colors
@@ -60,6 +62,7 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
     shadowColor: Color(0xffE9E9E9),
     secondaryWithOpacity: Color(0xffDCEDEC),
     borderColor: Color(0xffDDE0E6),
+    scaffoldSecondaryBg: Color(0xffF3F3F3),
   );
 
   // Dark theme colors
@@ -78,6 +81,7 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
     shadowColor: Color(0xffE9E9E9),
     secondaryWithOpacity: Color(0xffDCEDEC),
     borderColor: Color(0xffDDE0E6),
+    scaffoldSecondaryBg: Color(0xffF3F3F3),
   );
 
   @override
@@ -92,6 +96,7 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
     Color? warning,
     Color? info,
     Color? shadowColor,
+    Color? scaffoldSecondaryBg,
   }) {
     return AppThemeExtension(
       textSecondary: textSecondary ?? this.textSecondary,
@@ -108,6 +113,7 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
       shadowColor: shadowColor ?? Color(0xffE9E9E9),
       secondaryWithOpacity: secondaryWithOpacity,
       borderColor: borderColor,
+      scaffoldSecondaryBg:  scaffoldSecondaryBg ?? this.scaffoldSecondaryBg,
     );
   }
 
@@ -130,6 +136,7 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
       shadowColor: Color(0xffE9E9E9),
       secondaryWithOpacity: secondaryWithOpacity,
       borderColor: borderColor,
+      scaffoldSecondaryBg:  Color.lerp(scaffoldSecondaryBg, other.scaffoldSecondaryBg, t)!,
     );
   }
 }
