@@ -11,14 +11,30 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
+import 'package:shared_preferences/shared_preferences.dart' as _i460;
+
+import '../../core/storage/local_storage_service.dart' as _i531;
+import 'modules/storage_module.dart' as _i148;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
-  _i174.GetIt init({
+  Future<_i174.GetIt> init({
     String? environment,
     _i526.EnvironmentFilter? environmentFilter,
-  }) {
-    _i526.GetItHelper(this, environment, environmentFilter);
+  }) async {
+    final gh = _i526.GetItHelper(this, environment, environmentFilter);
+    final storageModule = _$StorageModule();
+    await gh.factoryAsync<_i460.SharedPreferences>(
+      () => storageModule.sharedPreferences,
+      preResolve: true,
+    );
+    gh.factory<_i531.LocalStorageService>(
+      () => _i531.LocalStorageService(
+        sharedPreferences: gh<_i460.SharedPreferences>(),
+      ),
+    );
     return this;
   }
 }
+
+class _$StorageModule extends _i148.StorageModule {}
