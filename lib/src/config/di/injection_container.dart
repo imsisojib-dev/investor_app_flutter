@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-
+import 'package:investor_app_flutter/src/config/di/injection_container.config.dart';
 
 final getIt = GetIt.instance;
 
@@ -10,4 +10,6 @@ final getIt = GetIt.instance;
   asExtension: true, // default
 )
 
-void configureDependencies() => getIt;
+Future<void> configureDependencies() async{
+  getIt.init();
+}
