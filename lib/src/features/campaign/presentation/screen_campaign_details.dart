@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:investor_app_flutter/src/config/extensions/widget_extensions.dart';
 import 'package:investor_app_flutter/src/core/theme/app_colors.dart';
@@ -395,7 +394,7 @@ class _ScreenCampaignDetailsState extends State<ScreenCampaignDetails> with Tick
       ),
     ];
 
-    return Column(children: [const SizedBox(height: 16), ...rows.map((r) => _buildRow(r)).toList()]);
+    return Column(children: [const SizedBox(height: 16), ...rows.map((r) => _buildRow(r))]);
   }
 
   Widget _buildRow(_BreakdownRow row) {
@@ -507,9 +506,8 @@ class _StatItem extends StatelessWidget {
   final String label;
   final String value;
   final bool highlight;
-  final Color? valueColor;
 
-  const _StatItem({required this.label, required this.value, this.highlight = false, this.valueColor});
+  const _StatItem({required this.label, required this.value, this.highlight = false});
 
   @override
   Widget build(BuildContext context) {
@@ -530,7 +528,7 @@ class _StatItem extends StatelessWidget {
 class _Divider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(width: 1, height: 32);
+    return SizedBox(width: 1, height: 32);
   }
 }
 

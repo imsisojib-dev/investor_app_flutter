@@ -3,7 +3,7 @@ import 'package:investor_app_flutter/src/core/constants/storage_keys.dart';
 import 'package:investor_app_flutter/src/core/storage/i_local_storage_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-@Injectable()
+@LazySingleton(as: ILocalStorageService)
 class LocalStorageService implements ILocalStorageService{
   final SharedPreferences sharedPreferences;
 
