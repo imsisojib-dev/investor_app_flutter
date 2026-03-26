@@ -16,7 +16,6 @@ class InvestorApp extends StatefulWidget {
 }
 
 class _InvestorAppState extends State<InvestorApp> {
-
   @override
   void initState() {
     super.initState();
@@ -28,8 +27,8 @@ class _InvestorAppState extends State<InvestorApp> {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       builder: (_, app) {
-        return BlocBuilder<BlocAppTheme,StateAppTheme>(
-          builder: (_, themeState){
+        return BlocBuilder<BlocAppTheme, StateAppTheme>(
+          builder: (_, themeState) {
             return MaterialApp(
               //navigatorKey: navigationService.navigatorKey,
               debugShowCheckedModeBanner: false,
@@ -55,15 +54,9 @@ class _InvestorAppState extends State<InvestorApp> {
   }
 }
 
-
 //to avoid scroll glow in whole common
 class AppBehavior extends ScrollBehavior {
-  @override
-  Widget buildViewportChrome(
-      BuildContext context,
-      Widget child,
-      AxisDirection axisDirection,
-      ) {
+  Widget buildViewportChrome(BuildContext context, Widget child, AxisDirection axisDirection) {
     return child;
   }
 }

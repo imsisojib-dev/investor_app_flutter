@@ -51,7 +51,7 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: const BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
-        boxShadow: [BoxShadow(color: const Color(0xff000000).withOpacity(.05), spreadRadius: 5, blurRadius: 5, offset: const Offset(0, -1))],
+        boxShadow: [BoxShadow(color: const Color(0xff000000).withValues(alpha: .05), spreadRadius: 5, blurRadius: 5, offset: const Offset(0, -1))],
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,

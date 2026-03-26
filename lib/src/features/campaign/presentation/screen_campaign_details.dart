@@ -59,7 +59,6 @@ class _ScreenCampaignDetailsState extends State<ScreenCampaignDetails> with Tick
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
 
     return Scaffold(
       body: Stack(
