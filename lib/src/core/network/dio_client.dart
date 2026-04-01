@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
+import 'package:investor_app_flutter/src/core/network/interceptors/error_interceptor.dart';
 import 'package:investor_app_flutter/src/core/network/interceptors/retry_interceptor.dart';
 
 @lazySingleton
@@ -9,6 +10,7 @@ class DioClient {
   DioClient(
       String baseUrl,
       RetryInterceptor retryInterceptor,
+      ErrorInterceptor errorInterceptor,
       ) {
     dio = Dio(
       BaseOptions(
@@ -21,7 +23,8 @@ class DioClient {
     );
 
     dio.interceptors.addAll([
-      retryInterceptor
+      retryInterceptor,
+      errorInterceptor,
     ]);
   }
 }
