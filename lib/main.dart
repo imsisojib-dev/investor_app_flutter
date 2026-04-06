@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:investor_app_flutter/src/config/di/injection_container.dart';
-import 'package:investor_app_flutter/src/core/theme/bloc/bloc_app_theme.dart';
+import 'package:investor_app_flutter/src/shared/theme/bloc/bloc_app_theme.dart';
 
 import 'investor_app.dart';
 

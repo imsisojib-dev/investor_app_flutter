@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:investor_app_flutter/src/config/extensions/widget_extensions.dart';
 import 'package:investor_app_flutter/src/config/routes/routes.dart';
-import 'package:investor_app_flutter/src/core/theme/app_theme_extension.dart';
+import 'package:investor_app_flutter/src/shared/theme/app_theme_extension.dart';
 import 'package:investor_app_flutter/src/features/home/presentation/widgets/campaign_card.dart';
 import 'package:investor_app_flutter/src/features/home/presentation/widgets/video_card_advanced.dart';
 

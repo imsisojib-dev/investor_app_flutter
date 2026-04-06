@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:investor_app_flutter/src/config/routes/routes.dart';
 import 'package:investor_app_flutter/src/core/constants/asset_svgs.dart';
 import 'package:investor_app_flutter/src/core/enums/e_bottomnavigation.dart';
-import 'package:investor_app_flutter/src/core/theme/app_theme_extension.dart';
+import 'package:investor_app_flutter/src/shared/theme/app_theme_extension.dart';
 import 'package:investor_app_flutter/src/features/discover/presentation/widgets/ongoing_campaign_card.dart';
 import 'package:investor_app_flutter/src/shared/widgets/app_bottomnavigationbar.dart';
 
