@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:investor_app_flutter/src/config/extensions/widget_extensions.dart';
-import 'package:investor_app_flutter/src/core/theme/app_colors.dart';
-import 'package:investor_app_flutter/src/core/theme/app_theme_extension.dart';
+import 'package:investor_app_flutter/src/shared/theme/app_colors.dart';
+import 'package:investor_app_flutter/src/shared/theme/app_theme_extension.dart';
 import 'package:investor_app_flutter/src/core/helpers/widget_helper.dart';
 import 'package:investor_app_flutter/src/shared/widgets/custom_card.dart';
 import 'package:investor_app_flutter/src/shared/widgets/dotted_line.dart';
