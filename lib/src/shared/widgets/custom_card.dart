@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:investor_app_flutter/src/core/theme/app_theme_extension.dart';
+import 'package:investor_app_flutter/src/shared/theme/app_theme_extension.dart';
 
 class CustomCard extends StatelessWidget {
   final Color? backgroundColor;

@@ -7,8 +7,8 @@ import 'package:investor_app_flutter/src/config/routes/navigation_observer.dart'
 import 'package:investor_app_flutter/src/config/routes/router_helper.dart';
 import 'package:investor_app_flutter/src/config/routes/routes.dart';
 import 'package:investor_app_flutter/src/core/constants/app_constants.dart';
-import 'package:investor_app_flutter/src/core/theme/bloc/bloc_app_theme.dart';
-import 'package:investor_app_flutter/src/core/theme/app_theme.dart';
+import 'package:investor_app_flutter/src/shared/theme/bloc/bloc_app_theme.dart';
+import 'package:investor_app_flutter/src/shared/theme/app_theme.dart';
 
 Future<void> initApp()async {
 

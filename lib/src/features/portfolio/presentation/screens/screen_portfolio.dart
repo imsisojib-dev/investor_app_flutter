@@ -3,7 +3,7 @@ import 'package:investor_app_flutter/src/config/extensions/widget_extensions.dar
 import 'package:investor_app_flutter/src/config/routes/routes.dart';
 import 'package:investor_app_flutter/src/core/enums/e_bottomnavigation.dart';
 import 'package:investor_app_flutter/src/core/helpers/widget_helper.dart';
-import 'package:investor_app_flutter/src/core/theme/app_theme_extension.dart';
+import 'package:investor_app_flutter/src/shared/theme/app_theme_extension.dart';
 import 'package:investor_app_flutter/src/shared/widgets/app_bottomnavigationbar.dart';
 import 'package:investor_app_flutter/src/shared/widgets/custom_card.dart';
 import 'package:investor_app_flutter/src/shared/widgets/dotted_line.dart';
