@@ -15,6 +15,7 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
+import '../../core/errors/error_handler.dart' as _i691;
 import '../../core/network/api_client.dart' as _i1059;
 import '../../core/network/dio_client.dart' as _i571;
 import '../../core/network/interceptors/error_interceptor.dart' as _i494;
@@ -22,8 +23,24 @@ import '../../core/network/interceptors/retry_interceptor.dart' as _i814;
 import '../../core/network/network_info.dart' as _i892;
 import '../../core/storage/i_local_storage_service.dart' as _i1070;
 import '../../core/storage/local_storage_service.dart' as _i531;
+import '../../features/campaign/data/datasources/remote/campaign_dummy_remote_datasource.dart'
+    as _i880;
+import '../../features/campaign/data/datasources/remote/campaign_remote_datasource.dart'
+    as _i700;
+import '../../features/campaign/data/datasources/remote/i_campaign_remote_datasource.dart'
+    as _i141;
+import '../../features/campaign/data/repositories/campaign_repository_impl.dart'
+    as _i684;
+import '../../features/campaign/domain/repositories/i_campaign_repository.dart'
+    as _i281;
+import '../../features/campaign/domain/usecases/usecase_fetch_campaigns.dart'
+    as _i597;
 import 'modules/network_module.dart' as _i851;
 import 'modules/storage_module.dart' as _i148;
+
+const String _mock = 'mock';
+const String _prod = 'prod';
+const String _dev = 'dev';
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -40,7 +57,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i895.Connectivity>(() => networkModule.connectivity);
     gh.lazySingleton<_i361.Dio>(() => networkModule.dio);
+    gh.lazySingleton<_i691.ErrorHandler>(() => _i691.ErrorHandler());
     gh.lazySingleton<_i494.ErrorInterceptor>(() => _i494.ErrorInterceptor());
+    gh.lazySingleton<_i141.ICampaignRemoteDatasource>(
+      () => _i880.CampaignDummyRemoteDataSource(),
+      registerFor: {_mock},
+    );
     gh.lazySingleton<_i1070.ILocalStorageService>(
       () => _i531.LocalStorageService(
         sharedPreferences: gh<_i460.SharedPreferences>(),
@@ -61,6 +83,16 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i1059.IApiClient>(
       () => _i1059.ApiClient(gh<_i571.DioClient>()),
+    );
+    gh.lazySingleton<_i141.ICampaignRemoteDatasource>(
+      () => _i700.CampaignRemoteDatasource(gh<_i1059.IApiClient>()),
+      registerFor: {_prod, _dev},
+    );
+    gh.lazySingleton<_i281.ICampaignRepository>(
+      () => _i684.CampaignRepositoryImpl(gh<_i141.ICampaignRemoteDatasource>()),
+    );
+    gh.lazySingleton<_i597.GetCampaignDetailUseCase>(
+      () => _i597.GetCampaignDetailUseCase(gh<_i281.ICampaignRepository>()),
     );
     return this;
   }
