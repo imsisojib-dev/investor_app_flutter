@@ -36,20 +36,3 @@ class PaginationMeta extends Equatable {
   @override
   List<Object?> get props => [currentPage, lastPage, perPage, total];
 }
-
-class BaseResponse extends Equatable {
-  final bool success;
-  final String message;
-
-  const BaseResponse({required this.success, required this.message});
-
-  factory BaseResponse.fromJson(Map<String, dynamic> json) {
-    return BaseResponse(
-      success: json['success'] as bool? ?? false,
-      message: json['message'] as String? ?? '',
-    );
-  }
-
-  @override
-  List<Object> get props => [success, message];
-}

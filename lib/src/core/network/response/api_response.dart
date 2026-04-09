@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import 'base_response.dart';
+import 'pagination_meta.dart';
 
 class ApiResponse<T> extends Equatable {
   final bool success;

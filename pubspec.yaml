@@ -51,6 +51,7 @@ dependencies:
   video_player: ^2.11.0
   chewie: ^1.13.0  # Better video player UI with controls
   connectivity_plus: ^7.1.0
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:
