@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:investor_app_flutter/src/config/routes/navigation_observer.dart';
@@ -7,6 +9,26 @@ import 'package:investor_app_flutter/src/config/routes/routes.dart';
 import 'package:investor_app_flutter/src/core/constants/app_constants.dart';
 import 'package:investor_app_flutter/src/shared/theme/bloc/bloc_app_theme.dart';
 import 'package:investor_app_flutter/src/shared/theme/app_theme.dart';
+
+Future<void> initApp()async {
+
+  //register font
+  LicenseRegistry.addLicense(() async* {
+    final license = await rootBundle.loadString('assets/fonts/outfit/OFL.txt');
+    yield LicenseEntryWithLineBreaks(['assets/fonts/outfit'], license);
+  });
+
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        BlocProvider<BlocAppTheme>(
+          create: (BuildContext context) => BlocAppTheme(),
+        ),
+      ],
+      child: const InvestorApp(),
+    ),
+  );
+}
 
 class InvestorApp extends StatefulWidget {
   const InvestorApp({super.key});

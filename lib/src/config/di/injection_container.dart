@@ -10,6 +10,6 @@ final getIt = GetIt.instance;
   asExtension: true, // default
 )
 
-Future<void> configureDependencies() async{
-  getIt.init();
+Future<void> configureDependencies(String env) async{
+  getIt.init(environment: env);
 }
