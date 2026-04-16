@@ -33,7 +33,7 @@ class CampaignCard extends StatelessWidget {
               borderRadius: BorderRadius.only(topLeft: Radius.circular(16), topRight: Radius.circular(16)),
               child: Image.asset(
                 'assets/pngs/dummy_transport_company.png',
-                height: 124.h,
+                height: 120.h,
                 width: MediaQuery.of(context).size.width,
                 fit: BoxFit.cover,
               ),
@@ -60,7 +60,7 @@ class CampaignCard extends StatelessWidget {
                     ),
                   ],
                 ).padding(EdgeInsets.symmetric(horizontal: 8.w)),
-                const SizedBox(height: 4),
+                const SizedBox(height: 2),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
