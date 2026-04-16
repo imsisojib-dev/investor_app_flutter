@@ -236,20 +236,25 @@ class _VideoCardAdvancedState extends State<VideoCardAdvanced> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(height: 4),
             const Icon(
               Icons.error_outline,
               color: Colors.white,
-              size: 32,
+              size: 24,
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 4),
             Text(
               'Failed to load video',
               style: theme.textTheme.bodySmall?.copyWith(
                 color: Colors.white,
               ),
             ),
-            const SizedBox(height: 8),
             TextButton(
+              style: ButtonStyle(
+                padding: WidgetStatePropertyAll(EdgeInsets.zero),
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                minimumSize: WidgetStatePropertyAll(Size(100, 16),),
+              ),
               onPressed: () {
                 setState(() {
                   _hasError = false;
@@ -257,9 +262,11 @@ class _VideoCardAdvancedState extends State<VideoCardAdvanced> {
                 });
                 _initializePlayer();
               },
-              child: const Text(
+              child: Text(
                 'Retry',
-                style: TextStyle(color: Color(0xff00BA63)),
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  color: theme.colorScheme.secondary,
+                ),
               ),
             ),
           ],

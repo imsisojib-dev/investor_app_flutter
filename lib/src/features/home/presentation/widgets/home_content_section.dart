@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:investor_app_flutter/src/config/extensions/widget_extensions.dart';
 import 'package:investor_app_flutter/src/config/routes/routes.dart';
 import 'package:investor_app_flutter/src/shared/theme/app_theme_extension.dart';
-import 'package:investor_app_flutter/src/features/home/presentation/widgets/campaign_card.dart';
+import 'package:investor_app_flutter/src/features/campaign/presentation/widgets/campaign_card.dart';
 import 'package:investor_app_flutter/src/features/home/presentation/widgets/video_card_advanced.dart';
 
 class HomeContentSection extends StatelessWidget {
@@ -36,7 +36,7 @@ class HomeContentSection extends StatelessWidget {
                       },
                     );
                   },
-                  options: CarouselOptions(enlargeCenterPage: false, autoPlay: true, height: 185.h),
+                  options: CarouselOptions(enlargeCenterPage: false, autoPlay: true, height: 188.h),
                 ),
                 const SizedBox(height: 24,),
               ],
@@ -69,7 +69,7 @@ class HomeContentSection extends StatelessWidget {
                   options: CarouselOptions(
                     enlargeCenterPage: false,
                     autoPlay: false,
-                    height: 130.h,
+                    height: 132.h,
                     viewportFraction: 0.6,
                     enableInfiniteScroll: true,
                   ),
@@ -99,7 +99,7 @@ class HomeContentSection extends StatelessWidget {
                       },
                     );
                   },
-                  options: CarouselOptions(enlargeCenterPage: false, autoPlay: true, height: 185.h),
+                  options: CarouselOptions(enlargeCenterPage: false, autoPlay: true, height: 188.h),
                 ),
                 const SizedBox(height: 24,),
               ],
