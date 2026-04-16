@@ -36,7 +36,7 @@ class HomeContentSection extends StatelessWidget {
                       },
                     );
                   },
-                  options: CarouselOptions(enlargeCenterPage: false, autoPlay: true, height: 185.h),
+                  options: CarouselOptions(enlargeCenterPage: false, autoPlay: true, height: 188.h),
                 ),
                 const SizedBox(height: 24,),
               ],
@@ -69,7 +69,7 @@ class HomeContentSection extends StatelessWidget {
                   options: CarouselOptions(
                     enlargeCenterPage: false,
                     autoPlay: false,
-                    height: 130.h,
+                    height: 132.h,
                     viewportFraction: 0.6,
                     enableInfiniteScroll: true,
                   ),
@@ -99,7 +99,7 @@ class HomeContentSection extends StatelessWidget {
                       },
                     );
                   },
-                  options: CarouselOptions(enlargeCenterPage: false, autoPlay: true, height: 185.h),
+                  options: CarouselOptions(enlargeCenterPage: false, autoPlay: true, height: 188.h),
                 ),
                 const SizedBox(height: 24,),
               ],
