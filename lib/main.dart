@@ -6,7 +6,7 @@ import 'investor_app.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  configureDependencies(Environment.prod);
+  await configureDependencies(Environment.prod);
   await initApp();
 }
 
