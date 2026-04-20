@@ -35,6 +35,7 @@ import '../../features/campaign/domain/repositories/i_campaign_repository.dart'
     as _i281;
 import '../../features/campaign/domain/usecases/usecase_fetch_campaigns.dart'
     as _i597;
+import '../../features/home/presentation/bloc/home_bloc.dart' as _i202;
 import 'modules/network_module.dart' as _i851;
 import 'modules/storage_module.dart' as _i148;
 
@@ -93,6 +94,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i597.GetCampaignDetailUseCase>(
       () => _i597.GetCampaignDetailUseCase(gh<_i281.ICampaignRepository>()),
+    );
+    gh.factory<_i202.HomeBloc>(
+      () => _i202.HomeBloc(gh<_i597.GetCampaignDetailUseCase>()),
     );
     return this;
   }
