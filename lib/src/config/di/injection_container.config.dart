@@ -92,11 +92,11 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i281.ICampaignRepository>(
       () => _i684.CampaignRepositoryImpl(gh<_i141.ICampaignRemoteDatasource>()),
     );
-    gh.lazySingleton<_i597.GetCampaignDetailUseCase>(
-      () => _i597.GetCampaignDetailUseCase(gh<_i281.ICampaignRepository>()),
+    gh.lazySingleton<_i597.UseCaseFetchCampaigns>(
+      () => _i597.UseCaseFetchCampaigns(gh<_i281.ICampaignRepository>()),
     );
     gh.factory<_i202.HomeBloc>(
-      () => _i202.HomeBloc(gh<_i597.GetCampaignDetailUseCase>()),
+      () => _i202.HomeBloc(gh<_i597.UseCaseFetchCampaigns>()),
     );
     return this;
   }
