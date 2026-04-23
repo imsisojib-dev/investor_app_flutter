@@ -15,4 +15,9 @@ class CampaignRemoteDatasource implements ICampaignRemoteDatasource {
   Future<ApiResponse<List<CampaignEntity>>> getCampaigns() {
     throw UnimplementedError();
   }
+
+  @override
+  Future<ApiResponse<CampaignEntity>> getCampaignDetails(String? id) {
+    throw UnimplementedError();
+  }
 }

@@ -3,4 +3,5 @@ import 'package:investor_app_flutter/src/features/campaign/domain/entities/campa
 
 abstract class ICampaignRemoteDatasource {
   Future<ApiResponse<List<CampaignEntity>>> getCampaigns();
+  Future<ApiResponse<CampaignEntity>> getCampaignDetails(String? id);
 }

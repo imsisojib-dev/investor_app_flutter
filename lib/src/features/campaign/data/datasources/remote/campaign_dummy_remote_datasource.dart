@@ -16,4 +16,13 @@ class CampaignDummyRemoteDataSource implements ICampaignRemoteDatasource {
       data: CampaignFixtures.campaigns,
     );
   }
+
+  @override
+  Future<ApiResponse<CampaignEntity>> getCampaignDetails(String? id) async{
+    return ApiResponse<CampaignEntity>(
+      success: true,
+      message: 'Successfully fetched campaign details.',
+      data: CampaignFixtures.campaigns.first,
+    );
+  }
 }
