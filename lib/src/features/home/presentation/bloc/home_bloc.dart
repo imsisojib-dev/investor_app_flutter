@@ -9,7 +9,7 @@ import 'package:investor_app_flutter/src/config/environment/environment.dart' as
 
 @Injectable(env: [env.Environment.dev, env.Environment.prod])
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  final GetCampaignDetailUseCase _getCampaignDetailUseCase;
+  final UseCaseFetchCampaigns _getCampaignDetailUseCase;
 
   HomeBloc(this._getCampaignDetailUseCase) : super(HomeStateCampaigns([])) {
     on<HomeEventInitial>(_fetchInitialCampaigns);

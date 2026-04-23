@@ -21,4 +21,11 @@ class CampaignRepositoryImpl implements ICampaignRepository {
       return Left(NotFoundFailure(message: 'No campaigns found!'));
     }
   }
+
+  @override
+  Future<Either<Failure, CampaignEntity>> getCampaignDetails(String? id) {
+    // TODO: implement getCampaignDetails
+    throw UnimplementedError();
+
+  }
 }
