@@ -17,10 +17,11 @@ class RouterHelper {
   ///HOME
   static final Handler _homeScreenHandler = Handler(
     handlerFunc: (context, Map<String, dynamic> parameters) {
-      return BlocProvider(
-        create: (_)=> HomeBloc(getIt())..add(HomeEventInitial()),
-        child: const ScreenHome(),
-      );
+      // return BlocProvider(
+      //   create: (_)=> getIt<HomeBloc>()..add(HomeEventInitial()),
+      //   child: const ScreenHome(),
+      // );
+      return const ScreenHome();
     },
   );
 
