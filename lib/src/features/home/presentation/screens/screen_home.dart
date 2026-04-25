@@ -52,16 +52,16 @@ class _ScreenHomeState extends State<ScreenHome> {
       body: Column(
         children: [
           HomeHeaderSection(),
-          Expanded(
-            child: CustomScrollView(
-              physics: const BouncingScrollPhysics(),
-              slivers: [
-                _featuredCampaigns(theme),
-                _aboutUsSection(theme),
-                //_newCampaignsSection(theme),
-              ],
-            ),
-          ),
+          // Expanded(
+          //   child: CustomScrollView(
+          //     physics: const BouncingScrollPhysics(),
+          //     slivers: [
+          //       _featuredCampaigns(theme),
+          //       _aboutUsSection(theme),
+          //       //_newCampaignsSection(theme),
+          //     ],
+          //   ),
+          // ),
         ],
       ),
       bottomNavigationBar: const AppBottomNavigationBar(state: EBottomNavigationBar.home),

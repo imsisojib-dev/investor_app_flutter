@@ -7,7 +7,8 @@ import 'package:investor_app_flutter/src/features/home/presentation/bloc/home_st
 import 'package:investor_app_flutter/src/shared/models/no_params.dart';
 import 'package:investor_app_flutter/src/config/environment/environment.dart' as env;
 
-@Injectable(env: [env.Environment.dev, env.Environment.prod])
+@injectable
+// @Injectable(env: [env.Environment.prod, env.Environment.mock, env.Environment.dev])
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final UseCaseFetchCampaigns _getCampaignDetailUseCase;
 
