@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:investor_app_flutter/src/config/di/injection_container.dart';
 import 'package:investor_app_flutter/src/config/extensions/widget_extensions.dart';
+import 'package:investor_app_flutter/src/features/home/presentation/bloc/test_singleton.dart';
 import 'package:investor_app_flutter/src/shared/theme/app_colors.dart';
 import 'package:investor_app_flutter/src/shared/theme/app_theme_extension.dart';
 
@@ -31,7 +33,7 @@ class HomeHeaderSection extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Investment App', style: theme.textTheme.titleLarge?.copyWith(color: theme.appColors.white)),
+                Text(getIt<TestSingleton>().name, style: theme.textTheme.titleLarge?.copyWith(color: theme.appColors.white)),
                 IconButton(
                   onPressed: () {},
                   icon: Icon(Icons.notifications_outlined, color: theme.appColors.textYellow),

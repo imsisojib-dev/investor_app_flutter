@@ -5,8 +5,10 @@ import 'package:investor_app_flutter/src/core/interfaces/interface_use_case.dart
 import 'package:investor_app_flutter/src/shared/models/no_params.dart';
 import 'package:investor_app_flutter/src/features/campaign/domain/entities/campaign_entity.dart';
 import 'package:investor_app_flutter/src/features/campaign/domain/repositories/i_campaign_repository.dart';
+import 'package:investor_app_flutter/src/config/environment/environment.dart' as env;
 
-@LazySingleton(as: IUseCase)
+@lazySingleton
+// @Injectable(as: IUseCase, env: [env.Environment.dev, env.Environment.prod, env.Environment.prod])
 class UseCaseFetchCampaigns implements IUseCase<NoParams, List<CampaignEntity>>{
   final ICampaignRepository _repository;
 
