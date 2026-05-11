@@ -7,11 +7,11 @@ class CampaignEntity extends Equatable {
   final String description;
   final String imageUrl;
   final String videoUrl;
-  final String tenure;
+  final int tenure;
   final String duration;
   final double profitPercentage;
   final String returnType;
-  final String returnAmount;
+  final double returnAmount;
   final double minInvestAmount;
   final double maxInvestAmount;
   final String startingDate;

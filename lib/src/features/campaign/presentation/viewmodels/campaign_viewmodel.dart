@@ -11,11 +11,11 @@ class CampaignViewmodel extends Equatable{
   String get description => _entity.description;
   String get imageUrl => _entity.imageUrl;
   String get videoUrl => _entity.videoUrl;
-  String get tenure => _entity.tenure;
+  int get tenure => _entity.tenure;
   String get duration => _entity.duration;
   double get profitPercentage => _entity.profitPercentage;
   String get returnType => _entity.returnType;
-  String get returnAmount => _entity.returnAmount;
+  double get returnAmount => _entity.returnAmount;
   String get startingDate => _entity.startingDate;
   String get closingDate => _entity.closingDate;
   double get targetAmount => _entity.targetAmount;
