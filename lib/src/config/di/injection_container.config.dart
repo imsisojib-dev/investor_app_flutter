@@ -24,6 +24,8 @@ import '../../core/network/interceptors/retry_interceptor.dart' as _i814;
 import '../../core/network/network_info.dart' as _i892;
 import '../../core/storage/i_local_storage_service.dart' as _i1070;
 import '../../core/storage/local_storage_service.dart' as _i531;
+import '../../features/campaign/data/datasources/remote/campaign_dummy_remote_datasource.dart'
+    as _i880;
 import '../../features/campaign/data/datasources/remote/campaign_remote_datasource.dart'
     as _i700;
 import '../../features/campaign/data/datasources/remote/i_campaign_remote_datasource.dart'
@@ -38,11 +40,12 @@ import '../../features/campaign/domain/usecases/usecase_fetch_campaign_details.d
 import '../../features/campaign/domain/usecases/usecase_fetch_campaigns.dart'
     as _i597;
 import '../../features/home/presentation/bloc/home_bloc.dart' as _i202;
-import '../../features/home/presentation/bloc/test_singleton.dart' as _i745;
 import 'modules/network_module.dart' as _i851;
 import 'modules/storage_module.dart' as _i148;
 
+const String _mock = 'mock';
 const String _prod = 'prod';
+const String _dev = 'dev';
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -61,6 +64,10 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i361.Dio>(() => networkModule.dio);
     gh.lazySingleton<_i691.ErrorHandler>(() => _i691.ErrorHandler());
     gh.lazySingleton<_i494.ErrorInterceptor>(() => _i494.ErrorInterceptor());
+    gh.lazySingleton<_i141.ICampaignRemoteDatasource>(
+      () => _i880.CampaignDummyRemoteDataSource(),
+      registerFor: {_mock},
+    );
     gh.lazySingleton<_i1070.ILocalStorageService>(
       () => _i531.LocalStorageService(
         sharedPreferences: gh<_i460.SharedPreferences>(),
@@ -68,10 +75,6 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i892.INetworkInfo>(
       () => _i892.NetworkInfo(gh<_i895.Connectivity>()),
-    );
-    gh.singleton<_i745.TestSingleton>(
-      () => _i745.TestSingleton(),
-      registerFor: {_prod},
     );
     gh.lazySingleton<_i814.RetryInterceptor>(
       () => _i814.RetryInterceptor(gh<_i892.INetworkInfo>()),
@@ -88,6 +91,7 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i141.ICampaignRemoteDatasource>(
       () => _i700.CampaignRemoteDatasource(gh<_i1059.IApiClient>()),
+      registerFor: {_prod, _dev},
     );
     gh.lazySingleton<_i281.ICampaignRepository>(
       () => _i684.CampaignRepositoryImpl(gh<_i141.ICampaignRemoteDatasource>()),
