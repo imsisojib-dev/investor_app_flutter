@@ -5,10 +5,8 @@ import 'package:investor_app_flutter/src/features/campaign/presentation/viewmode
 import 'package:investor_app_flutter/src/features/home/presentation/bloc/home_event.dart';
 import 'package:investor_app_flutter/src/features/home/presentation/bloc/home_state.dart';
 import 'package:investor_app_flutter/src/shared/models/no_params.dart';
-import 'package:investor_app_flutter/src/config/environment/environment.dart' as env;
 
 @injectable
-// @Injectable(env: [env.Environment.prod, env.Environment.mock, env.Environment.dev])
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final UseCaseFetchCampaigns _getCampaignDetailUseCase;
 
@@ -18,6 +16,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   Future<void> _fetchInitialCampaigns(HomeEventInitial event, Emitter<HomeState> emit) async {
     emit(HomeStateCampaignsFetching());
+    await Future.delayed(Duration(seconds: 3));
     var result = await _getCampaignDetailUseCase.execute(NoParams());
     result.fold(
           (error) {
